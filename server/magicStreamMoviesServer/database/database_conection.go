@@ -56,8 +56,8 @@ func OpenCollection(collectionName string) *mongo.Collection {
 
 	// Get database name from env variables
 	databaseName := os.Getenv("DATABASE_NAME")
-	if err =  cursor.All(ctx, &movies); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error":"Failed to decode movies."})
+	if databaseName == "" {
+		log.Fatal("DATABASE_NAME not set!")
 	}
 
 	fmt.Println("DATABASE_NAME: ", databaseName)
