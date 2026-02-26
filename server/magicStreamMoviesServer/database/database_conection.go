@@ -1,9 +1,10 @@
 package database
 
-import(
+import (
 	"fmt"
 	"log"
 	"os"
+
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"go.mongodb.org/mongo-driver/v2/mongo/options"
@@ -11,7 +12,7 @@ import(
 
 // DBInstance creates and return MongoDB client instance
 // It loads env variables and establishes the database connection.
-func DBInstance() *mongo.Client{
+func DBInstance() *mongo.Client {
 
 	// Load env variables from env file
 	err := godotenv.Load(".env")
@@ -43,7 +44,6 @@ func DBInstance() *mongo.Client{
 }
 
 var Client *mongo.Client = DBInstance()
-
 
 // OpenCollection returns a reference to specific MongoDB collection
 // It reads the database name from env variables
