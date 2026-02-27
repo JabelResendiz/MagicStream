@@ -1,7 +1,9 @@
 @host = http://localhost:8080
 
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImNyYWlnZGVudG9uMkBob3RtYWlsLmNvbSIsIkZpcnN0TmFtZSI6IkNyYWlnMTIiLCJMYXN0TmFtZSI6IkRlbnRvbjEyIiwiUm9sZSI6IlVTRVIiLCJVc2VySWQiOiI2OWExZTY2M2UyOTQwOGRlNzk1YTFjYWYiLCJpc3MiOiJNYWdpY1N0cmVhbSIsImV4cCI6MTc3MjMxMDQ5MCwiaWF0IjoxNzcyMjI0MDkwfQ.fGWIBBNJqzCJhkSO6GU18jdYUekjTPgybMLtJ7-m4QE
 POST {{host}}/addmovie
 Content-Type:  application/json
+Authorization: Bearer {{token}}
 
 {
         "imdb_id": "tt0102034",
