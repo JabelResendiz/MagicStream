@@ -4,10 +4,10 @@ POST {{host}}/register
 Content-Type:  application/json
 
 {
-  "first_name": "Craig",
-  "last_name": "Denton",
-  "email": "craigdenton@hotmail.com",
-  "password": "Password1!",
+  "first_name": "Craig12",
+  "last_name": "Denton12",
+  "email": "craigdenton2@hotmail.com",
+  "password": "Password12!",
   "role": "USER",
   "token": "",
   "refresh_token": "",
