@@ -1,0 +1,9 @@
+@host = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImNyYWlnZGVudG9uMkBob3RtYWlsLmNvbSIsIkZpcnN0TmFtZSI6IkNyYWlnMTIiLCJMYXN0TmFtZSI6IkRlbnRvbjEyIiwiUm9sZSI6IlVTRVIiLCJVc2VySWQiOiI2OWExZTY2M2UyOTQwOGRlNzk1YTFjYWYiLCJpc3MiOiJNYWdpY1N0cmVhbSIsImV4cCI6MTc3MjMzOTUzNiwiaWF0IjoxNzcyMjUzMTM2fQ.o0kFru7915_8qtqoZA2D8PUSPsixXVDfMrYEmuQ-__Q
+PATCH {{host}}/updatereview/tt1119646
+Content-Type:  application/json
+Authorization: Bearer {{token}}
+
+{
+  "admin_review": "This movie is great"
+}
