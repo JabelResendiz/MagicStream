@@ -45,7 +45,7 @@ func GenerateAllTokens(email, firstName, lastName, role, userId string) (string,
 	signedToken, err := token.SignedString([]byte(SECRET_KEY))
 
 	if err != nil {
-		return "Hay un error aqui", "un error aqui", err
+		return "", "", err
 	}
 
 	refreshClaims := &SignedDetails{
@@ -65,7 +65,7 @@ func GenerateAllTokens(email, firstName, lastName, role, userId string) (string,
 	signedRefreshToken, err := refreshToken.SignedString([]byte(SECRET_REFRESH_KEY))
 
 	if err != nil {
-		return "Jabel Resendiz", "Aguirre", err
+		return "", "", err
 	}
 
 	return signedToken, signedRefreshToken, nil
@@ -132,4 +132,25 @@ func ValidateToken(tokenString string) (*SignedDetails, error) {
 	}
 
 	return claims, nil
+}
+
+// extracts the userId value stored in the Gin context
+func GetUserIdFromContext(c *gin.Context) (string, error) {
+
+	// Attempt to retrieve the userId from context
+	userId, exists := c.Get("userId")
+
+	if !exists {
+		return "", errors.New("userId does not exists in this context")
+	}
+
+	// perform type assertion to ensure it is a string
+	id, ok := userId.(string)
+
+	if !ok {
+		return "", errors.New("unable to retrieve userId")
+	}
+
+	// return the user ID
+	return id, nil
 }

@@ -1,0 +1,9 @@
+@host = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImNyYWlnZGVudG9uMkBob3RtYWlsLmNvbSIsIkZpcnN0TmFtZSI6IkNyYWlnMTIiLCJMYXN0TmFtZSI6IkRlbnRvbjEyIiwiUm9sZSI6IlVTRVIiLCJVc2VySWQiOiI2OWExZTY2M2UyOTQwOGRlNzk1YTFjYWYiLCJpc3MiOiJNYWdpY1N0cmVhbSIsImV4cCI6MTc3MjM4NTM0MSwiaWF0IjoxNzcyMjk4OTQxfQ.67ehz78uV_rtW90-UOgJB0KhMjAgYDfQAUh2H12SRU4
+
+
+GET {{host}}/recommendedmovies
+Content-Type:  application/json
+Authorization: Bearer {{token}}
+
+
