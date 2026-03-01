@@ -154,3 +154,24 @@ func GetUserIdFromContext(c *gin.Context) (string, error) {
 	// return the user ID
 	return id, nil
 }
+
+// extracts the role value stored in the Gin context
+func GetRoleFromContext(c *gin.Context) (string, error) {
+
+	// Attempt to retrieve the role from context
+	role, exists := c.Get("role")
+
+	if !exists {
+		return "", errors.New("role does not exists in this context")
+	}
+
+	// perform type assertion to ensure it is a string
+	memberRole, ok := role.(string)
+
+	if !ok {
+		return "", errors.New("unable to retrieve userId")
+	}
+
+	// return the memeber Role
+	return memberRole, nil
+}
